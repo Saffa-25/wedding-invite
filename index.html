@@ -100,19 +100,19 @@
                 <div class="row d-flex justify-content-center">
                 <div class="col-lg-8">
                     <div class="section-tittle text-center mb-70">
-                        <h2>Wedding Info</h2>
+                        <h2>Wedding Invitation</h2>
                         <img src="assets/img/gallery/tittle_img.png" alt="">
                         <p>Celebrate with us as we declare our love and commitment, taking the first steps into our happily ever after.</p>
                     </div>
                 </div>
             </div>
-            <div class="row align-items-end">
+            <div class="row align-items-end justify-content-center">
                 <div class="col-xl-6 col-lg-6 col-md-6">
                     <div class="single-card text-center mb-30">
                         <div class="card-top">
                             <!-- <span class="flaticon-chart"></span> -->
                             <span><img src="assets/img/weddingCouple.webp" class="img" alt="Bride and groom" style="width: 23%; height: auto;"></span>
-                            <h4>The Wedding</h4>
+                            <h4>Nikah</h4>
                         </div>
                         <div class="card-bottom" style="padding-bottom: 20px;">
                             <ul>
@@ -130,7 +130,7 @@
                         
                     </div>
                 </div>
-                <div class="col-xl-6 col-lg-6 col-md-6">
+                <div class="col-xl-6 col-lg-6 col-md-6" id="reception-panel">
                     <div class="single-card text-center mb-30">
                         <div class="card-top">
                             <!-- <span class="flaticon-project"></span> -->
@@ -385,6 +385,11 @@
             // Update every second, starting immediately
             const countdownInterval = setInterval(update, 1000);
             update();
+        }
+
+        // ?wedd in the URL: show only the wedding panel
+        if (new URLSearchParams(window.location.search).has("wedd")) {
+            document.getElementById("reception-panel").remove();
         }
 
         // Wedding date & time for the countdown
